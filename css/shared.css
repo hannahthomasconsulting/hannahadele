@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════════════════
+   hannahadele.com — Shared Stylesheet
+   Root pages:        <link rel="stylesheet" href="/css/shared.css">
+   Subdirectory pages: <link rel="stylesheet" href="../css/shared.css">
+═══════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red:    #FF3A3A;
+  --pink:   #FF7EB3;
+  --yellow: #F5CB00;
+  --blue:   #1557E8;
+  --navy:   #0d2461;
+  --black:  #1a1a1a;
+  --white:  #ffffff;
+  --off:    #fafafa;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--black);
+  background: white;
+}
+
+/* ── SITE WRAPPER ── */
+.site {
+  max-width: 760px;
+  margin: 0 auto;
+  background: white;
+  overflow: hidden;
+}
+
+/* ── STICKY NAV ── */
+nav.nav {
+  background: white;
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ebebeb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+a.logo {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+.nav-links a {
+  color: #666;
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-links a.active { color: var(--black); font-weight: 900; }
+.nav-links a.external { color: var(--blue); font-weight: 800; }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+  padding: 20px 16px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+}
+
+/* ── FOOTER ── */
+footer.footer {
+  background: var(--blue);
+  padding: 24px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a.footer-logo {
+  font-size: 14px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+}
+.footer-links a:hover { color: white; }
+.footer-links a.external { color: var(--yellow); font-weight: 800; }
+
+/* ══════════════════════════════════════════
+   MOBILE BREAKPOINTS (≤ 600px)
+══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  nav.nav { padding: 12px 16px; }
+  .nav-links { gap: 12px; font-size: 9px; }
+  a.logo { font-size: 13px; }
+
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat { padding: 16px 12px; }
+  .stat-num { font-size: 20px; }
+
+  footer.footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+}
