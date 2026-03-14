@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hannahadeleshome — Flip It</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red:   #e8352a;
+    --pink:  #f564a9;
+    --yellow:#f7c948;
+    --blue:  #2563eb;
+    --navy:  #0d2461;
+    --white: #ffffff;
+    --off:   #f8f6f2;
+    --black: #111111;
+  }
+
+  body { background: #e8e8e8; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+  .page-label {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: .15em;
+    color: #999;
+    padding: 14px 0 10px;
+    text-transform: uppercase;
+  }
+
+  .wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    border-bottom: 2px solid #ebebeb;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+  }
+  .nav-logo { font-weight: 800; font-size: 15px; letter-spacing: -.3px; }
+  .nav-links { display: flex; gap: 24px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .nav-links a { text-decoration: none; color: #333; }
+  .nav-links a.active { color: var(--red); }
+  .nav-links a.external { color: var(--blue); }
+
+  /* HERO */
+  .hero {
+    background: var(--yellow);
+    padding: 52px 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 14px;
+  }
+  .hero-headline {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .hero-sub {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(0,0,0,0.65);
+    margin-bottom: 24px;
+    max-width: 300px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--black);
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    cursor: pointer;
+  }
+
+  /* Hero furniture preview stack */
+  .hero-pieces {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .piece-preview {
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+  }
+  .piece-label {
+    background: rgba(0,0,0,0.65);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 6px;
+    border-radius: 3px;
+  }
+  /* CSS pattern pieces */
+  .p-stripes-pink {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--pink) 0px, var(--pink) 18px,
+      #1a1a1a 18px, #1a1a1a 36px
+    );
+  }
+  .p-stripes-red {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--red) 0px, var(--red) 22px,
+      white 22px, white 40px
+    );
+  }
+  .p-stripes-blue {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--blue) 0px, var(--blue) 14px,
+      var(--yellow) 14px, var(--yellow) 28px
+    );
+  }
+  .p-checks {
+    background:
+      repeating-conic-gradient(var(--red) 0% 25%, var(--yellow) 0% 50%) 0 0 / 28px 28px;
+  }
+  .p-tall { grid-row: span 2; aspect-ratio: auto; min-height: 220px; }
+
+  /* TAGLINE BAND */
+  .tagline-band {
+    background: var(--red);
+    padding: 18px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .tagline-item {
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    white-space: nowrap;
+    letter-spacing: .04em;
+  }
+  .tagline-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+
+  /* PORTFOLIO SECTION */
+  .section-pad { padding: 44px 36px; }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  .section-headline {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+  .section-headline em { font-style: normal; color: var(--pink); }
+  .section-sub {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+
+  /* Portfolio grid */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .portfolio-grid.two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio-cell {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3/4;
+  }
+  .portfolio-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Placeholder patterns for portfolio cells */
+  .ph { width: 100%; height: 100%; }
+  .ph-stripes-pink {
+    background: repeating-linear-gradient(
+      0deg, var(--pink) 0px, var(--pink) 20px,
+      #111 20px, #111 40px
+    );
+  }
+  .ph-stripes-red {
+    background: repeating-linear-gradient(
+      0deg, var(--red) 0px, var(--red) 24px,
+      white 24px, white 44px
+    );
+  }
+  .ph-stripes-blue {
+    background: repeating-linear-gradient(
+      0deg, var(--blue) 0px, var(--blue) 16px,
+      var(--yellow) 16px, var(--yellow) 32px
+    );
+  }
+  .ph-checks {
+    background: repeating-conic-gradient(
+      var(--red) 0% 25%, var(--yellow) 0% 50%
+    ) 0 0 / 30px 30px;
+  }
+  .ph-stripes-green {
+    background: repeating-linear-gradient(
+      45deg, #2d6a4f 0px, #2d6a4f 16px,
+      white 16px, white 32px
+    );
+  }
+  .ph-stripes-navy {
+    background: repeating-linear-gradient(
+      0deg, var(--navy) 0px, var(--navy) 20px,
+      var(--pink) 20px, var(--pink) 40px
+    );
+  }
+  .portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    padding: 24px 10px 10px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .ph-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    color: #111;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* BEFORE/AFTER */
+  .ba-section {
+    background: var(--off);
+    padding: 44px 36px;
+    border-top: 2px solid #ebebeb;
+  }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .ba-cell {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    position: relative;
+  }
+  .ba-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+  .ba-tag.before { background: #111; color: white; }
+  .ba-tag.after  { background: var(--yellow); color: #111; }
+  .ba-arrow {
+    text-align: center;
+    font-size: 28px;
+    color: var(--red);
+    font-weight: 900;
+  }
+  .ba-before-ph {
+    width: 100%; height: 100%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    padding: 16px;
+  }
+  .ba-after-ph {
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg, var(--pink) 0px, var(--pink) 20px,
+      #111 20px, #111 40px
+    );
+  }
+  .ba-note {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  /* HOW IT WORKS */
+  .how-section {
+    background: var(--navy);
+    padding: 44px 36px;
+  }
+  .how-section .section-label { color: rgba(255,255,255,0.4); }
+  .how-section .section-headline { color: white; }
+  .how-section .section-headline em { color: var(--yellow); }
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .step {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 20px 16px;
+  }
+  .step-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 12px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* OPTIONS */
+  .options-section {
+    padding: 44px 36px;
+    background: var(--off);
+    border-top: 2px solid #ebebeb;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .option-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #ebebeb;
+  }
+  .option-icon { font-size: 22px; margin-bottom: 8px; }
+  .option-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+  .option-desc {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #666;
+  }
+
+  /* PRICING NOTE */
+  .pricing-note {
+    background: var(--yellow);
+    padding: 20px 36px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .pricing-icon { font-size: 22px; }
+  .pricing-text { font-size: 13px; font-weight: 700; color: var(--black); line-height: 1.5; }
+  .pricing-text span { font-weight: 400; color: rgba(0,0,0,0.6); }
+
+  /* CTA */
+  .cta-section {
+    background: var(--red);
+    padding: 52px 36px;
+    text-align: center;
+  }
+  .cta-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 12px;
+  }
+  .cta-headline {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .cta-headline em { font-style: normal; color: var(--yellow); }
+  .cta-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    cursor: pointer;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--blue);
+    padding: 28px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo { font-weight: 800; font-size: 14px; color: white; }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .footer-links a { text-decoration: none; color: rgba(255,255,255,0.55); }
+  .footer-links a:hover { color: white; }
+</style>
+</head>
+<body>
+
+<div class="page-label">HANNAHADELESHOME.COM/FLIP-IT — INNER PAGE</div>
+
+<div class="wrapper">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">hannah adele's home</div>
+    <div class="nav-links">
+      <a href="page-shop.html">shop</a>
+      <a href="page-flip-it.html" class="active">flip it</a>
+      <a href="page-stays.html">stays</a>
+      <a href="page-work-with-me.html">work with me</a>
+      <a href="https://hannahthomasconsulting.com/" target="_blank" class="external">consulting ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">furniture restoration · commissioned pieces</div>
+      <div class="hero-headline">Your ugly furniture is a <em>blank canvas.</em></div>
+      <div class="hero-sub">I take old, discarded, or unloved furniture and transform it into bold, vibrant, one-of-a-kind statement pieces. Commission me for yours.</div>
+      <div class="hero-cta">commission a piece →</div>
+    </div>
+    <div class="hero-pieces">
+      <div class="piece-preview p-tall">
+        <img src="/dressers/7/after.jpg" alt="Blue white stripe dresser and nightstand set" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="piece-preview">
+        <img src="/dressers/1/after 3.JPG" alt="Hot pink plaid dresser" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="piece-preview">
+        <img src="/dressers/6/after 2.JPG" alt="Teal mint stripe dresser" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGLINE BAND -->
+  <div class="tagline-band">
+    <span class="tagline-item">dressers</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">nightstands</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">cabinets</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">custom patterns</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">bold colors</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">one of a kind</span>
+    <span class="tagline-dot"></span>
+    <span class="tagline-item">restored, not replaced</span>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="section-pad">
+    <div class="section-label">the work</div>
+    <div class="section-headline">Furniture that <em>stops people mid-scroll.</em></div>
+    <div class="section-sub">Each piece is painted by hand with bold, unique patterns — stripes, checks, graphic color-blocking. No two pieces are the same.</div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-cell">
+        <img src="/dressers/1/after 2.JPG" alt="Hot pink plaid dresser">
+      </div>
+      <div class="portfolio-cell">
+        <img src="/dressers/5/after.jpg" alt="Pink red striped dresser">
+      </div>
+      <div class="portfolio-cell">
+        <img src="/dressers/7/after 1.jpg" alt="Blue white striped dresser">
+      </div>
+    </div>
+    <div class="portfolio-grid two-col" style="margin-top:10px">
+      <div class="portfolio-cell" style="aspect-ratio:4/3">
+        <img src="/dressers/3/after.PNG" alt="Teal striped dresser">
+      </div>
+      <div class="portfolio-cell" style="aspect-ratio:4/3">
+        <img src="/dressers/8/after.png" alt="Green striped dresser">
+      </div>
+    </div>
+  </div>
+
+  <!-- BEFORE / AFTER -->
+  <div class="ba-section">
+    <div class="section-label">the transformation</div>
+    <div class="section-headline">From forgotten <em>to unforgettable.</em></div>
+    <div class="section-sub">The pieces I work with are often headed for the trash. What comes out the other side looks like it belongs in a design magazine.</div>
+    <div class="ba-grid">
+      <div class="ba-cell">
+        <img src="/dressers/3/before.PNG" alt="Plain brown dresser before" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div class="ba-tag before">before</div>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-cell">
+        <img src="/dressers/3/after.PNG" alt="Teal striped dresser after" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div class="ba-tag after">after</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="section-label">the process</div>
+    <div class="section-headline">Simple as <em>three steps.</em></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Get the piece</div>
+        <div class="step-desc">Drop off a piece you already have, or I can source one for you. Either works — I'm flexible.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Pick a vibe</div>
+        <div class="step-desc">Choose a pattern and color direction, or hand it off completely to me. Trust the process — you won't be disappointed.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Pick it up</div>
+        <div class="step-desc">Your piece comes back completely transformed. Bold, sealed, ready to be the most interesting thing in any room.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="options-section">
+    <div class="section-label">how commissions work</div>
+    <div class="section-headline">Your piece, your <em>way.</em></div>
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-icon">🪑</div>
+        <div class="option-title">You bring the piece</div>
+        <div class="option-desc">Drop off a dresser, nightstand, cabinet — anything you already own that needs a new life. I handle the rest.</div>
+      </div>
+      <div class="option-card">
+        <div class="option-icon">🔍</div>
+        <div class="option-title">I source it for you</div>
+        <div class="option-desc">No piece? No problem. I'll find the right piece and factor sourcing into the project. Great for gifts or specific needs.</div>
+      </div>
+      <div class="option-card">
+        <div class="option-icon">🎨</div>
+        <div class="option-title">You pick the design</div>
+        <div class="option-desc">Have a specific pattern, color, or vibe in mind? Tell me and I'll make it happen.</div>
+      </div>
+      <div class="option-card">
+        <div class="option-icon">✨</div>
+        <div class="option-title">Leave it to me</div>
+        <div class="option-desc">The most popular option. You tell me the room it's going in and I'll do what I do. Surprise yourself.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING NOTE -->
+  <div class="pricing-note">
+    <div class="pricing-icon">💬</div>
+    <div class="pricing-text">
+      Every piece is custom — pricing depends on size, complexity, and whether I'm sourcing.
+      <span>Fill out the form and I'll send you a custom quote.</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-eyebrow">commission a piece</div>
+    <div class="cta-headline">Ready for a piece that makes people <em>ask questions?</em></div>
+    <div class="cta-sub">Tell me about your space, your vibe, and whether you have a piece in mind. I'll take it from there.</div>
+    <div class="cta-btn">start your commission →</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">hannah adele's home</div>
+    <div class="footer-links">
+      <span>shop</span>
+      <span>flip it</span>
+      <span>stays</span>
+      <span>work with me</span>
+      <a href="https://hannahthomasconsulting.com/" target="_blank">consulting ↗</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
