@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hannah Adele's Home | Shop</title>
+  <meta name="description" content="Shop Hannah Adele's favorite things — Amazon storefront with DIY, home decor, kitchen, organization, fashion & outdoors picks.">
+  <link rel="stylesheet" href="../css/shared.css">
+  <style>
+    /* page-specific styles only */
+
+    /* HERO */
+    .hero {
+      background: var(--blue);
+      padding: 56px 40px 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 32px;
+    }
+    .hero-text {}
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 14px;
+    }
+    .hero-headline {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.0;
+      color: white;
+      margin-bottom: 14px;
+    }
+    .hero-headline em { font-style: normal; color: var(--yellow); }
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+    .hero-btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 18px 36px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .hero-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 14px;
+      letter-spacing: .03em;
+    }
+    .hero-portrait {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      padding: 44px 36px;
+      border-bottom: 2px solid #ebebeb;
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .section-headline {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+    .section-headline em { font-style: normal; color: var(--blue); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .cat-card {
+      background: var(--off);
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background .15s;
+    }
+    .cat-card:hover { background: #eeeae3; }
+    .cat-icon { font-size: 26px; margin-bottom: 8px; }
+    .cat-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .cat-desc {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.45;
+    }
+
+    /* SHOPMY BANNER */
+    .shopmy-banner {
+      margin: 0 36px 44px;
+      border: 2.5px dashed #ddd;
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .shopmy-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .shopmy-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+    }
+    .shopmy-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .shopmy-desc {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 36px 20px 28px; grid-template-columns: 1fr; }
+      .hero-headline { font-size: 36px; }
+      .hero-portrait { display: none; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="logo">hannah adele's home</a>
+    <div class="nav-links">
+      <a href="/shop/" class="active">shop</a>
+      <a href="/flip-it/">flip it</a>
+      <a href="/stays/">stays</a>
+      <a href="/work-with-me/">work with me</a>
+      <a href="https://hannahthomasconsulting.com/" target="_blank" class="external">consulting ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">stuff I actually use and love</div>
+      <div class="hero-headline">My <em>favorite</em> things.</div>
+      <div class="hero-sub">Everything I reach for in the studio, the kitchen, and around the house — all in one place on Amazon.</div>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="hero-btn">shop my amazon storefront →</a>
+      <div class="hero-note">opens in Amazon — affiliate links</div>
+    </div>
+    <img src="/photos/shop.jpeg" alt="Hannah Adele Thomas" class="hero-portrait">
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="categories">
+    <div class="section-label">browse by category</div>
+    <div class="section-headline">Find exactly what you're <em>looking for.</em></div>
+    <div class="cat-grid">
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">🎨</div>
+        <div class="cat-title">DIY + Craft</div>
+        <div class="cat-desc">Paint, brushes, mod podge, supplies I use for every flip</div>
+      </a>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">🏠</div>
+        <div class="cat-title">Home Decor</div>
+        <div class="cat-desc">Finds that make a room feel put-together without the budget</div>
+      </a>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">🍳</div>
+        <div class="cat-title">Kitchen</div>
+        <div class="cat-desc">The things on my counter I actually use every single day</div>
+      </a>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">📦</div>
+        <div class="cat-title">Organization</div>
+        <div class="cat-desc">Storage and systems that actually stick</div>
+      </a>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">👗</div>
+        <div class="cat-title">Fashion + Style</div>
+        <div class="cat-desc">The pieces I keep reaching for — comfort meets personality</div>
+      </a>
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
+        <div class="cat-icon">🌿</div>
+        <div class="cat-title">Outdoors + Garden</div>
+        <div class="cat-desc">Patio, plants, and everything that makes outside feel like inside</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SHOPMY COMING SOON -->
+  <div class="shopmy-banner">
+    <div class="shopmy-icon">🛍️</div>
+    <div class="shopmy-text">
+      <div class="shopmy-badge">coming soon</div>
+      <div class="shopmy-title">ShopMy storefront — launching soon</div>
+      <div class="shopmy-desc">More curated finds, brand collabs, and my full style picks in one place. Follow along so you don't miss it.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="/" class="footer-logo">hannah adele's home</a>
+    <div class="footer-links">
+      <a href="/shop/">shop</a>
+      <a href="/flip-it/">flip it</a>
+      <a href="/stays/">stays</a>
+      <a href="/work-with-me/">work with me</a>
+      <a href="https://hannahthomasconsulting.com/" target="_blank" class="external">consulting ↗</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
