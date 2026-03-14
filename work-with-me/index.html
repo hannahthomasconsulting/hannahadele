@@ -12,12 +12,12 @@
     /* HERO */
     .hero {
       background: var(--red);
-      padding: 44px 36px 40px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      align-items: stretch;
+      overflow: hidden;
     }
-    .hero-content { flex: 1; }
+    .hero-content { padding: 44px 24px 40px 36px; }
     .hero-eyebrow {
       font-size: 11px;
       text-transform: uppercase;
@@ -55,13 +55,11 @@
       text-decoration: none;
     }
     .hero-portrait {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid white;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center top;
-      flex-shrink: 0;
+      display: block;
     }
 
     /* SERVICES INTRO */
@@ -268,7 +266,8 @@
 
     /* MOBILE */
     @media (max-width: 600px) {
-      .hero { padding: 36px 20px 28px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 36px 20px 28px; }
       .hero-headline { font-size: 36px; }
       .hero-portrait { display: none; }
       .hero-btns { flex-direction: column; gap: 10px; }
