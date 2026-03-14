@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hannah Adele's Home | Work With Me</title>
+  <meta name="description" content="Brand partnerships, hospitality content, and brand storytelling. Former $40M tech sales rep turned creator. Let's make something people actually watch.">
+  <link rel="stylesheet" href="../css/shared.css">
+  <style>
+    /* page-specific styles only */
+
+    /* HERO */
+    .hero {
+      background: var(--red);
+      padding: 44px 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .hero-content { flex: 1; }
+    .hero-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.55);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero-headline {
+      font-size: 48px;
+      font-weight: 900;
+      color: white;
+      line-height: 0.97;
+      margin-bottom: 14px;
+    }
+    .hero-headline em { color: var(--yellow); font-style: normal; }
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+    .hero-btns { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .btn-white {
+      display: inline-block;
+      background: white;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+    }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.5);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+    }
+    .hero-portrait {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+    }
+
+    /* SERVICES INTRO */
+    .services-intro {
+      padding: 44px 36px 28px;
+      background: var(--off);
+    }
+    .section-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .section-headline {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.05;
+    }
+    .section-headline em { color: var(--red); font-style: normal; }
+
+    /* SERVICE BLOCKS */
+    .service {
+      padding: 36px 36px 32px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .service:last-of-type { border-bottom: none; }
+    .service-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .service-num {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1;
+      opacity: 0.15;
+    }
+    .service-title-block {}
+    .service-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .service-title { font-size: 24px; font-weight: 900; line-height: 1.1; }
+    .service-badge {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      align-self: center;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+    .deliverables {
+      background: var(--off);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .deliverables-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+    }
+    .del-item {
+      font-size: 12px;
+      color: var(--black);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .del-item::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      font-size: 10px;
+    }
+    .ideal-for {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 16px;
+    }
+    .ideal-for strong { color: var(--black); }
+    .service-cta {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    /* PHOTO NOTE */
+    .photo-note {
+      background: #fff0f6;
+      border-left: 4px solid var(--pink);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .photo-note strong { color: var(--black); }
+
+    /* MEDIA KIT BANNER */
+    .kit-banner {
+      background: var(--yellow);
+      padding: 28px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .kit-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 800; color: rgba(0,0,0,0.5); margin-bottom: 4px; }
+    .kit-headline { font-size: 20px; font-weight: 900; color: var(--black); }
+    .kit-sub { font-size: 12px; color: rgba(0,0,0,0.6); margin-top: 4px; }
+    .btn-dark {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    /* BRAND CONTENT EXAMPLES */
+    .examples-section {
+      padding: 32px 36px 28px;
+      border-bottom: 2px solid #f0f0f0;
+      background: white;
+    }
+    .examples-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .examples-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .examples-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--black);
+    }
+    .examples-see-more {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--red);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .tiktok-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 0 8px;
+    }
+    .tiktok-row::-webkit-scrollbar { display: none; }
+    .tiktok-row .tiktok-embed {
+      flex-shrink: 0 !important;
+      min-width: 280px !important;
+      max-width: 280px !important;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--red);
+      padding: 44px 36px;
+      text-align: center;
+    }
+    .cta-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(255,255,255,0.5); font-weight: 700; margin-bottom: 12px; }
+    .cta-headline { font-size: 32px; font-weight: 900; color: white; line-height: 1.05; margin-bottom: 10px; }
+    .cta-headline em { color: var(--yellow); font-style: normal; }
+    .cta-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+    .cta-btn {
+      display: inline-block;
+      background: white;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+    }
+    .cta-email { font-size: 14px; color: white; font-weight: 800; margin-top: 16px; }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .hero { padding: 36px 20px 28px; }
+      .hero-headline { font-size: 36px; }
+      .hero-portrait { display: none; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .service { padding: 36px 20px; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .examples-section { padding: 36px 20px 20px; }
+      .tiktok-row { gap: 10px; }
+      .tiktok-row .tiktok-embed { min-width: 260px !important; max-width: 260px !important; }
+      .cta-section { padding: 44px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="logo">hannah adele's home</a>
+    <div class="nav-links">
+      <a href="/shop/">shop</a>
+      <a href="/flip-it/">flip it</a>
+      <a href="/stays/">stays</a>
+      <a href="/work-with-me/" class="active">work with me</a>
+      <a href="https://hannahthomasconsulting.com/" target="_blank" class="external">consulting ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Nashville, TN · brand partnerships · hospitality · consulting</div>
+      <div class="hero-headline">Let's make<br>something <em>people</em><br>actually watch.</div>
+      <div class="hero-sub">I'm not just a content creator. I'm a former teacher, $40M tech sales rep, and full-time creator who knows how to make people stop, pay attention, and act.</div>
+      <div class="hero-btns">
+        <a href="mailto:hannahadeleshome@gmail.com" class="btn-white">get in touch →</a>
+      </div>
+    </div>
+    <img src="/photos/work-with-me.jpeg" alt="Hannah Adele Thomas" class="hero-portrait">
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">1.4M</div>
+      <div class="stat-label">top video views</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">533K</div>
+      <div class="stat-label">total likes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$40M</div>
+      <div class="stat-label">in software sold</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">523</div>
+      <div class="stat-label">posts published</div>
+    </div>
+  </div>
+
+  <!-- SERVICES INTRO -->
+  <div class="services-intro">
+    <div class="section-label">three ways to work together</div>
+    <div class="section-headline">Pick your fit.<br><em>Let's build something.</em></div>
+  </div>
+
+  <!-- SERVICE 01: BRAND PARTNERSHIPS -->
+  <div class="service">
+    <div class="service-header">
+      <div class="service-num" style="color:var(--red)">01</div>
+      <div class="service-title-block">
+        <div class="service-tag" style="color:var(--red)">Brand Partnerships</div>
+        <div class="service-title">Sponsored content<br>that doesn't feel<br>like an ad.</div>
+      </div>
+      <div class="service-badge" style="background:#fff3f3;color:var(--red)">TikTok · Instagram · YouTube</div>
+    </div>
+    <div class="service-desc">
+      I integrate brands into real content — the stuff people actually share. No stiff demos, no robotic scripts. Your product shows up in a real home, a real life, and a real moment that lands.
+    </div>
+    <div class="deliverables">
+      <div class="deliverables-label">What's included</div>
+      <div class="deliverables-grid">
+        <div class="del-item">Dedicated sponsored video</div>
+        <div class="del-item">Integrated product mentions</div>
+        <div class="del-item">Instagram Reels + Stories</div>
+        <div class="del-item">TikTok + YouTube Shorts</div>
+        <div class="del-item">Brand usage rights</div>
+        <div class="del-item">Performance recap</div>
+      </div>
+    </div>
+    <div class="ideal-for"><strong>Ideal for:</strong> Home, lifestyle, fashion, outdoors, running &amp; fitness, maker goods, tools, food &amp; beverage, CPG — if it fits into a real, active, full life, it fits here</div>
+    <a href="mailto:hannahadeleshome@gmail.com" class="service-cta" style="background:var(--red);color:white">let's talk partnerships →</a>
+  </div>
+
+  <!-- BRAND CONTENT EXAMPLES -->
+  <div class="examples-section">
+    <div class="examples-header">
+      <div>
+        <div class="examples-label">see it in action</div>
+        <div class="examples-title">Brand content that actually performs.</div>
+      </div>
+      <a href="https://www.tiktok.com/@hannahadeleshome" target="_blank" class="examples-see-more">see all on TikTok ↗</a>
+    </div>
+    <div class="tiktok-row">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7613174632006307103" data-video-id="7613174632006307103" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7611573582493256974" data-video-id="7611573582493256974" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7610151017199471886" data-video-id="7610151017199471886" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7604993759675239694" data-video-id="7604993759675239694" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7595247402315943181" data-video-id="7595247402315943181" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7595020853490896142" data-video-id="7595020853490896142" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7581148692615384334" data-video-id="7581148692615384334" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7580435043227553079" data-video-id="7580435043227553079" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7577167559129042189" data-video-id="7577167559129042189" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7576714406692687159" data-video-id="7576714406692687159" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7539305446650268942" data-video-id="7539305446650268942" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hannahadeleshome/video/7528112821985365303" data-video-id="7528112821985365303" style="max-width:325px;min-width:325px;"><section></section></blockquote>
+    </div>
+  </div>
+
+  <!-- SERVICE 02: HOSPITALITY CONTENT -->
+  <div class="service" style="background:var(--off)">
+    <div class="service-header">
+      <div class="service-num" style="color:var(--pink)">02</div>
+      <div class="service-title-block">
+        <div class="service-tag" style="color:var(--pink)">Hospitality Content</div>
+        <div class="service-title">I'll make people<br>want to stay there.</div>
+      </div>
+      <div class="service-badge" style="background:#fff0f6;color:var(--pink)">On-location · I come to you</div>
+    </div>
+    <div class="service-desc">
+      Hotels, Airbnbs, rentals, and resorts hire me to tell the story of their space. I show up, shoot it, and hand you a full content package — photos and video that make people click "book now."
+    </div>
+    <div class="photo-note">
+      <strong>Professional commercial photography included.</strong> My husband is a professional commercial photographer. Every hospitality package comes with gallery-quality listing photos — not iPhone shots.
+    </div>
+    <div class="deliverables">
+      <div class="deliverables-label">What's included</div>
+      <div class="deliverables-grid">
+        <div class="del-item">Professional listing photo gallery</div>
+        <div class="del-item">1–3 short-form highlight videos</div>
+        <div class="del-item">Amenity + experience content</div>
+        <div class="del-item">Social-ready vertical video</div>
+        <div class="del-item">Before &amp; after capability</div>
+        <div class="del-item">Full usage rights</div>
+      </div>
+    </div>
+    <div class="ideal-for"><strong>Ideal for:</strong> Short-term rentals, boutique hotels, resorts, vacation properties, property managers</div>
+    <a href="/stays/" class="service-cta" style="background:var(--pink);color:white">see the stays portfolio →</a>
+  </div>
+
+  <!-- SERVICE 03: BRAND STORYTELLING -->
+  <div class="service">
+    <div class="service-header">
+      <div class="service-num" style="color:var(--blue)">03</div>
+      <div class="service-title-block">
+        <div class="service-tag" style="color:var(--blue)">Brand Storytelling</div>
+        <div class="service-title">Tech that's actually<br>easy to understand.</div>
+      </div>
+      <div class="service-badge" style="background:#f0f4ff;color:var(--blue)">Consulting · Content Strategy</div>
+    </div>
+    <div class="service-desc">
+      I sold $40M in software by making complex things feel simple and worth caring about. Now I help tech and lifestyle brands do the same — through content strategy, video scripts, and brand narrative work.
+    </div>
+    <div class="deliverables">
+      <div class="deliverables-label">What's included</div>
+      <div class="deliverables-grid">
+        <div class="del-item">Content strategy sessions</div>
+        <div class="del-item">Video script development</div>
+        <div class="del-item">Brand narrative consulting</div>
+        <div class="del-item">Messaging &amp; positioning</div>
+        <div class="del-item">Creator-side product demos</div>
+        <div class="del-item">Retainer available</div>
+      </div>
+    </div>
+    <div class="ideal-for"><strong>Ideal for:</strong> SaaS, edtech, productivity tools, B2B brands that need to communicate to real humans</div>
+    <a href="https://hannahthomasconsulting.com/" target="_blank" class="service-cta" style="background:var(--blue);color:white">visit hannahthomasconsulting.com ↗</a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-label">let's talk</div>
+    <div class="cta-headline">Let's make something<br>people actually <em>care about.</em></div>
+    <div class="cta-sub">Reach out directly — whether you have a full brief or just an idea, I respond fast and I come prepared.</div>
+    <a href="mailto:hannahadeleshome@gmail.com" class="cta-btn">get in touch →</a>
+    <div class="cta-email">hannahadeleshome@gmail.com</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="/" class="footer-logo">hannah adele's home</a>
+    <div class="footer-links">
+      <a href="/shop/">shop</a>
+      <a href="/flip-it/">flip it</a>
+      <a href="/stays/">stays</a>
+      <a href="/work-with-me/">work with me</a>
+      <a href="https://hannahthomasconsulting.com/" target="_blank" class="external">consulting ↗</a>
+    </div>
+  </footer>
+
+</div>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+</body>
+</html>
