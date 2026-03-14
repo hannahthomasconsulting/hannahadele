@@ -102,30 +102,12 @@
     .who-card-title { font-size: 12px; font-weight: 800; margin-bottom: 3px; }
     .who-card-sub { font-size: 11px; color: #777; }
 
-    .who-photo-wrap {
-      position: relative;
-      display: inline-block;
-      margin-top: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-      width: 100%;
-    }
     .who-photo {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 12px;
-    }
-    .who-photo-blur {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-      filter: blur(10px);
-      clip-path: circle(12% at 50% 62%);
+      margin-top: 20px;
     }
 
     /* ── SECTION 4: CONTENT PILLARS ── */
@@ -349,10 +331,7 @@
     <div>
       <div class="who-label">who I am</div>
       <div class="who-headline">I've taught<br>classrooms, <em>sold<br>$40M in<br>software</em>, and now<br>I make things<br>on the internet.</div>
-      <div class="who-photo-wrap">
-        <img src="/photos/who-i-am.jpeg" alt="Hannah Adele with family" class="who-photo">
-        <img src="/photos/who-i-am.jpeg" alt="" aria-hidden="true" class="who-photo-blur">
-      </div>
+      <img src="/photos/who-i-am.jpeg" alt="Hannah Adele Thomas" class="who-photo">
     </div>
     <div class="who-right">
       <div class="who-body" style="margin-bottom:4px">Based in Nashville, TN. Wife, mom, and full-time creator with a background that makes me a different kind of brand partner — I know how to communicate, sell, and tell stories that actually land.</div>
