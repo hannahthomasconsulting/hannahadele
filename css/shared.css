@@ -100,7 +100,12 @@ a.logo {
 /* ── FOOTER ── */
 footer.footer {
   background: var(--blue);
-  padding: 24px 36px;
+  padding: 24px 36px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,6 +131,19 @@ a.footer-logo {
 }
 .footer-links a:hover { color: white; }
 .footer-links a.external { color: var(--yellow); font-weight: 800; }
+.footer-social {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.social-icon {
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.social-icon:hover { color: white; }
 
 /* ══════════════════════════════════════════
    MOBILE BREAKPOINTS (≤ 600px)
@@ -140,6 +158,8 @@ a.footer-logo {
   .stat { padding: 16px 12px; }
   .stat-num { font-size: 20px; }
 
-  footer.footer { flex-direction: column; gap: 16px; text-align: center; }
+  footer.footer { padding: 20px 16px 16px; gap: 14px; }
+  .footer-top { flex-direction: column; gap: 12px; text-align: center; }
   .footer-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .footer-social { justify-content: center; }
 }
