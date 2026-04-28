@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hannah Adele's Home | Shop</title>
-  <meta name="description" content="Shop Hannah Adele's favorite things — Amazon storefront with DIY, home decor, kitchen, organization, fashion & outdoors picks.">
+  <meta name="description" content="Shop Hannah Adele's favorite things — ShopMy, Amazon, Lowe's, and LTK storefronts with DIY, home decor, kitchen, organization, fashion & outdoors picks.">
   <link rel="stylesheet" href="../css/shared.css">
   <style>
     /* page-specific styles only */
@@ -38,26 +38,7 @@
       font-size: 15px;
       line-height: 1.6;
       color: rgba(255,255,255,0.7);
-      margin-bottom: 32px;
       max-width: 420px;
-    }
-    .hero-btn {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--black);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .hero-note {
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      margin-top: 14px;
-      letter-spacing: .03em;
     }
     .hero-portrait {
       width: 100%;
@@ -67,10 +48,190 @@
       display: block;
     }
 
+    /* STOREFRONTS */
+    .storefronts {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* SHOPMY — featured */
+    .shopmy-feature {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .shopmy-feature::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 160px; height: 160px;
+      background: rgba(245,203,0,0.08);
+      border-radius: 50%;
+    }
+    .shopmy-emoji { font-size: 38px; flex-shrink: 0; }
+    .shopmy-body { flex: 1; }
+    .shopmy-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .shopmy-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+    .shopmy-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .shopmy-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .creator-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      letter-spacing: .02em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 1px;
+      white-space: nowrap;
+    }
+    .creator-link:hover { color: rgba(255,255,255,0.85); }
+
+    /* AMAZON + LOWE'S — side by side */
+    .duo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .store-card {
+      background: var(--off);
+      border-radius: 12px;
+      padding: 20px 18px;
+      text-decoration: none;
+      display: block;
+      transition: background .15s;
+    }
+    .store-card:hover { background: #eeeae3; }
+    .store-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .store-icon { font-size: 26px; flex-shrink: 0; }
+    .store-name {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .store-tag {
+      display: inline-block;
+      background: white;
+      color: #999;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+      border: 1px solid #e5e5e5;
+    }
+    .store-desc {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .store-cta {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* LTK — full-width */
+    .ltk-banner {
+      background: var(--off);
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .ltk-banner:hover { background: #eeeae3; }
+    .ltk-icon { font-size: 28px; flex-shrink: 0; }
+    .ltk-body { flex: 1; }
+    .ltk-tag {
+      display: inline-block;
+      background: white;
+      color: #999;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-bottom: 6px;
+      border: 1px solid #e5e5e5;
+    }
+    .ltk-name {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+    .ltk-desc {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.45;
+    }
+    .ltk-arrow { font-size: 18px; color: #ccc; flex-shrink: 0; }
+
     /* CATEGORIES */
     .categories {
-      padding: 44px 36px;
-      border-bottom: 2px solid #ebebeb;
+      padding: 36px 32px;
+      border-top: 2px solid #ebebeb;
     }
     .section-label {
       font-size: 10px;
@@ -115,49 +276,15 @@
       line-height: 1.45;
     }
 
-    /* SHOPMY BANNER */
-    .shopmy-banner {
-      margin: 0 36px 44px;
-      border: 2.5px dashed #ddd;
-      border-radius: 12px;
-      padding: 28px 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .shopmy-icon {
-      font-size: 32px;
-      flex-shrink: 0;
-    }
-    .shopmy-badge {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--black);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 3px;
-      margin-bottom: 6px;
-    }
-    .shopmy-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--black);
-      margin-bottom: 4px;
-    }
-    .shopmy-desc {
-      font-size: 12px;
-      color: #888;
-      line-height: 1.5;
-    }
-
     @media (max-width: 600px) {
       .hero { grid-template-columns: 1fr; }
       .hero-text { padding: 36px 20px 28px; }
       .hero-headline { font-size: 36px; }
       .hero-portrait { display: none; }
+      .storefronts { padding: 24px 16px; gap: 12px; }
+      .shopmy-feature { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .duo-row { grid-template-columns: 1fr; }
+      .categories { padding: 28px 16px; }
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
@@ -182,42 +309,62 @@
   <div class="hero">
     <div class="hero-text">
       <div class="hero-eyebrow">stuff I actually use and love</div>
-      <div class="hero-headline">My <em>favorite</em> things.</div>
-      <div class="hero-sub">Everything I reach for in the studio, the kitchen, and around the house — all in one place on Amazon.</div>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="hero-btn">shop my amazon storefront →</a>
-      <div class="hero-note">opens in Amazon — affiliate links</div>
+      <div class="hero-headline">Shop all my <em>faves.</em></div>
+      <div class="hero-sub">Every platform, every pick — all in one place. From flips to fashion to everyday finds.</div>
     </div>
     <img src="/photos/shop.jpeg" alt="Hannah Adele Thomas" class="hero-portrait">
   </div>
 
-  <!-- LOWE'S STOREFRONT -->
-  <a href="https://shoplowes.me/3PubTAH" target="_blank" class="shopmy-banner" style="text-decoration:none;">
-    <div class="shopmy-icon">🔨</div>
-    <div class="shopmy-text">
-      <div class="shopmy-badge">shop now</div>
-      <div class="shopmy-title">My Lowe's storefront</div>
-      <div class="shopmy-desc">All my go-to tools, materials, and home improvement picks from Lowe's — everything I reach for on a flip.</div>
-    </div>
-  </a>
+  <!-- STOREFRONTS -->
+  <div class="storefronts">
 
-  <!-- LTK STOREFRONT -->
-  <a href="https://www.shopltk.com/explore/hannah_adele%E2%80%99s_home" target="_blank" class="shopmy-banner" style="text-decoration:none;">
-    <div class="shopmy-icon">🛒</div>
-    <div class="shopmy-text">
-      <div class="shopmy-badge">shop now</div>
-      <div class="shopmy-title">My LTK storefront</div>
-      <div class="shopmy-desc">Shop my outfits, home finds, and everything I'm loving — all linked and shoppable on LTK.</div>
+    <!-- 1. SHOPMY — featured -->
+    <div class="shopmy-feature">
+      <div class="shopmy-emoji">🛍️</div>
+      <div class="shopmy-body">
+        <div class="shopmy-tag">✦ Shop First</div>
+        <div class="shopmy-title">My ShopMy Storefront</div>
+        <div class="shopmy-desc">All my favorite things, all in one place.</div>
+        <div class="shopmy-actions">
+          <a href="https://shopmy.us/hannahadele" target="_blank" class="btn-primary">Shop ShopMy →</a>
+          <a href="https://shopmy.us/join/hannahadele" target="_blank" class="creator-link">Are you a creator? Join ShopMy ↗</a>
+        </div>
+      </div>
     </div>
-  </a>
 
-  <!-- SHOPMY COMING SOON -->
-  <div class="shopmy-banner">
-    <div class="shopmy-icon">🛍️</div>
-    <div class="shopmy-text">
-      <div class="shopmy-badge">coming soon</div>
-      <div class="shopmy-title">ShopMy storefront — launching soon</div>
-      <div class="shopmy-desc">More curated finds, brand collabs, and my full style picks in one place. Follow along so you don't miss it.</div>
+    <!-- 2. AMAZON + LOWE'S — equal duo -->
+    <div class="duo-row">
+      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="store-card">
+        <div class="store-header">
+          <div class="store-icon">📦</div>
+          <div class="store-name">Amazon Storefront</div>
+        </div>
+        <div class="store-tag">Amazon</div>
+        <div class="store-desc">DIY supplies, home decor, kitchen, organization, fashion &amp; outdoors — all my Amazon picks.</div>
+        <div class="store-cta">Shop Amazon →</div>
+      </a>
+      <a href="https://shoplowes.me/3PubTAH" target="_blank" class="store-card">
+        <div class="store-header">
+          <div class="store-icon">🔨</div>
+          <div class="store-name">Lowe's Storefront</div>
+        </div>
+        <div class="store-tag">Lowe's</div>
+        <div class="store-desc">Tools, materials, and home improvement picks — everything I reach for on a flip.</div>
+        <div class="store-cta">Shop Lowe's →</div>
+      </a>
     </div>
+
+    <!-- 3. LTK -->
+    <a href="https://www.shopltk.com/explore/hannah_adele%E2%80%99s_home" target="_blank" class="ltk-banner">
+      <div class="ltk-icon">🛒</div>
+      <div class="ltk-body">
+        <div class="ltk-tag">LTK</div>
+        <div class="ltk-name">My LTK Storefront</div>
+        <div class="ltk-desc">Outfits, home finds, and everything I'm loving — all linked and shoppable on LTK.</div>
+      </div>
+      <div class="ltk-arrow">→</div>
+    </a>
+
   </div>
 
   <!-- CATEGORIES -->
@@ -260,24 +407,24 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-  <div class="footer-top">
-    <a href="/" class="footer-logo">hannah adele's home</a>
-    <div class="footer-links">
-      <a href="/shop/">shop</a>
-      <a href="/flip-it/">flip it</a>
-      <a href="/stays/">stays</a>
-      <a href="/work-with-me/">work with me</a>
-      <a href="https://hannahthomasconsulting.org/" target="_blank" class="external">consulting ↗</a>
+    <div class="footer-top">
+      <a href="/" class="footer-logo">hannah adele's home</a>
+      <div class="footer-links">
+        <a href="/shop/">shop</a>
+        <a href="/flip-it/">flip it</a>
+        <a href="/stays/">stays</a>
+        <a href="/work-with-me/">work with me</a>
+        <a href="https://hannahthomasconsulting.org/" target="_blank" class="external">consulting ↗</a>
+      </div>
     </div>
-  </div>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/hannahadeleshome/" target="_blank" aria-label="Instagram" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-    <a href="https://www.tiktok.com/@hannahadeleshome" target="_blank" aria-label="TikTok" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52V6.75a4.85 4.85 0 0 1-1-.06z"/></svg></a>
-    <a href="https://www.facebook.com/hannahadeleshome" target="_blank" aria-label="Facebook" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-    <a href="https://www.youtube.com/@hannahadeleshome" target="_blank" aria-label="YouTube" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20.06 12 20.06 12 20.06s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-    <a href="https://www.pinterest.com/hannahadeleshome/" target="_blank" aria-label="Pinterest" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-4.373 23.178c-.047-.665-.089-1.686.018-2.412l1.304-5.525s-.332-.665-.332-1.649c0-1.547.898-2.703 2.014-2.703.95 0 1.41.713 1.41 1.568 0 .956-.608 2.384-.922 3.71-.263 1.108.556 2.011 1.648 2.011 1.978 0 3.502-2.086 3.502-5.099 0-2.664-1.916-4.527-4.649-4.527-3.168 0-5.026 2.376-5.026 4.831 0 .956.368 1.981.828 2.54.091.11.104.206.077.317l-.308 1.261c-.05.204-.161.248-.373.149-1.39-.648-2.26-2.682-2.26-4.316 0-3.511 2.551-6.734 7.353-6.734 3.862 0 6.864 2.753 6.864 6.428 0 3.835-2.418 6.921-5.776 6.921-1.127 0-2.188-.586-2.55-1.278l-.694 2.647c-.251.968-.928 2.181-1.383 2.918A12 12 0 1 0 12 0z"/></svg></a>
-  </div>
-</footer>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/hannahadeleshome/" target="_blank" aria-label="Instagram" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@hannahadeleshome" target="_blank" aria-label="TikTok" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52V6.75a4.85 4.85 0 0 1-1-.06z"/></svg></a>
+      <a href="https://www.facebook.com/hannahadeleshome" target="_blank" aria-label="Facebook" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="https://www.youtube.com/@hannahadeleshome" target="_blank" aria-label="YouTube" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20.06 12 20.06 12 20.06s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.pinterest.com/hannahadeleshome/" target="_blank" aria-label="Pinterest" class="social-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-4.373 23.178c-.047-.665-.089-1.686.018-2.412l1.304-5.525s-.332-.665-.332-1.649c0-1.547.898-2.703 2.014-2.703.95 0 1.41.713 1.41 1.568 0 .956-.608 2.384-.922 3.71-.263 1.108.556 2.011 1.648 2.011 1.978 0 3.502-2.086 3.502-5.099 0-2.664-1.916-4.527-4.649-4.527-3.168 0-5.026 2.376-5.026 4.831 0 .956.368 1.981.828 2.54.091.11.104.206.077.317l-.308 1.261c-.05.204-.161.248-.373.149-1.39-.648-2.26-2.682-2.26-4.316 0-3.511 2.551-6.734 7.353-6.734 3.862 0 6.864 2.753 6.864 6.428 0 3.835-2.418 6.921-5.776 6.921-1.127 0-2.188-.586-2.55-1.278l-.694 2.647c-.251.968-.928 2.181-1.383 2.918A12 12 0 1 0 12 0z"/></svg></a>
+    </div>
+  </footer>
 
 </div>
 </body>
