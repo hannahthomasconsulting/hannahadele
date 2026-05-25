@@ -1,0 +1,10 @@
+# Large video files
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.avi
+*.AVI
+
+# macOS
+.DS_Store
