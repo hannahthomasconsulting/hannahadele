@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hannah Adele's Home | Shop</title>
-  <meta name="description" content="Shop Hannah Adele's favorite things — ShopMy, Amazon, Lowe's, and LTK storefronts with DIY, home decor, kitchen, organization, fashion & outdoors picks.">
+  <title>Hannah Adele's Home | Links</title>
+  <meta name="description" content="All of Hannah Adele's links — ShopMy, Amazon, Lowe's, and LTK storefronts with DIY, home decor, kitchen, organization, fashion & outdoors picks.">
   <link rel="stylesheet" href="../css/shared.css">
   <style>
     /* page-specific styles only */
@@ -46,6 +46,80 @@
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    /* MY PATTERN — featured product */
+    .my-pattern {
+      padding: 32px 32px 0;
+    }
+    .pattern-card {
+      background: var(--off);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+    }
+    .pattern-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .pattern-body {
+      padding: 28px 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .pattern-tag {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .pattern-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .pattern-desc {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn-pattern {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      align-self: flex-start;
+    }
+    .btn-pattern:hover { background: #333; }
+
+    @media (max-width: 600px) {
+      .my-pattern { padding: 20px 16px 0; }
+      .pattern-card { grid-template-columns: 1fr; }
+      .pattern-img { height: 220px; object-position: center 20%; }
+      .pattern-body { padding: 20px; }
+      .pattern-title { font-size: 20px; }
     }
 
     /* STOREFRONTS */
@@ -297,7 +371,7 @@
   <nav class="nav">
     <a href="/" class="logo">hannah adele's home</a>
     <div class="nav-links">
-      <a href="/shop/" class="active">shop</a>
+      <a href="/shop/" class="active">links</a>
       <a href="/flip-it/">flip it</a>
       <a href="/stays/">stays</a>
       <a href="/work-with-me/">work with me</a>
@@ -315,6 +389,19 @@
     <img src="/photos/shop.jpeg" alt="Hannah Adele Thomas" class="hero-portrait">
   </div>
 
+  <!-- MY PATTERN -->
+  <div class="my-pattern">
+    <div class="pattern-card">
+      <img src="/photos/star crash pad.png" alt="Star Crash Pad Sewing Pattern" class="pattern-img">
+      <div class="pattern-body">
+        <div class="pattern-tag">Sewing Pattern</div>
+        <div class="pattern-title">Star Crash Pad Sewing Pattern</div>
+        <div class="pattern-desc">The oversized star floor pillow your kids (and you) will actually want on the floor. PDF sewing pattern — instant download.</div>
+        <a href="https://go.shopmy.us/p-60428163" target="_blank" class="btn-pattern">Get the Pattern →</a>
+      </div>
+    </div>
+  </div>
+
   <!-- STOREFRONTS -->
   <div class="storefronts">
 
@@ -322,8 +409,8 @@
     <div class="shopmy-feature">
       <div class="shopmy-emoji">🛍️</div>
       <div class="shopmy-body">
-        <div class="shopmy-tag">✦ Shop First</div>
-        <div class="shopmy-title">My ShopMy Storefront</div>
+        <div class="shopmy-tag">All Links</div>
+        <div class="shopmy-title">ShopMy Storefront</div>
         <div class="shopmy-desc">All my favorite things, all in one place.</div>
         <div class="shopmy-actions">
           <a href="https://shopmy.us/hannahadele" target="_blank" class="btn-primary">Shop ShopMy →</a>
@@ -367,50 +454,12 @@
 
   </div>
 
-  <!-- CATEGORIES -->
-  <div class="categories">
-    <div class="section-label">browse by category</div>
-    <div class="section-headline">Find exactly what you're <em>looking for.</em></div>
-    <div class="cat-grid">
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">🎨</div>
-        <div class="cat-title">DIY + Craft</div>
-        <div class="cat-desc">Paint, brushes, mod podge, supplies I use for every flip</div>
-      </a>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">🏠</div>
-        <div class="cat-title">Home Decor</div>
-        <div class="cat-desc">Finds that make a room feel put-together without the budget</div>
-      </a>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">🍳</div>
-        <div class="cat-title">Kitchen</div>
-        <div class="cat-desc">The things on my counter I actually use every single day</div>
-      </a>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">📦</div>
-        <div class="cat-title">Organization</div>
-        <div class="cat-desc">Storage and systems that actually stick</div>
-      </a>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">👗</div>
-        <div class="cat-title">Fashion + Style</div>
-        <div class="cat-desc">The pieces I keep reaching for — comfort meets personality</div>
-      </a>
-      <a href="https://www.amazon.com/shop/hannahadeleshome" target="_blank" class="cat-card">
-        <div class="cat-icon">🌿</div>
-        <div class="cat-title">Outdoors + Garden</div>
-        <div class="cat-desc">Patio, plants, and everything that makes outside feel like inside</div>
-      </a>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
       <a href="/" class="footer-logo">hannah adele's home</a>
       <div class="footer-links">
-        <a href="/shop/">shop</a>
+        <a href="/shop/">links</a>
         <a href="/flip-it/">flip it</a>
         <a href="/stays/">stays</a>
         <a href="/work-with-me/">work with me</a>
