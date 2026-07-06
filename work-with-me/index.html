@@ -264,6 +264,15 @@
     }
     .cta-email { font-size: 14px; color: white; font-weight: 800; margin-top: 16px; }
 
+    .stat-platform {
+      font-size: 8px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+
     /* MOBILE */
     @media (max-width: 600px) {
       .hero { grid-template-columns: 1fr; }
@@ -277,6 +286,8 @@
       .tiktok-row { gap: 10px; }
       .tiktok-row .tiktok-embed { min-width: 260px !important; max-width: 260px !important; }
       .cta-section { padding: 44px 20px; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr) !important; }
+      .stats-bar .stat:nth-child(3) { border-right: none; }
     }
   </style>
 </head>
@@ -310,20 +321,34 @@
   </div>
 
   <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat">
+  <div class="stats-bar" style="grid-template-columns: repeat(6, 1fr);">
+    <div class="stat" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <div class="stat-platform">TikTok</div>
       <div class="stat-num">16.5M</div>
-      <div class="stat-label">total video views</div>
+      <div class="stat-label">video views</div>
     </div>
-    <div class="stat">
+    <div class="stat" style="border-right: 2px solid rgba(255,255,255,0.2);">
+      <div class="stat-platform">TikTok</div>
       <div class="stat-num">1.2M</div>
       <div class="stat-label">total likes</div>
     </div>
-    <div class="stat">
+    <div class="stat" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <div class="stat-platform">Instagram</div>
+      <div class="stat-num">3.9M</div>
+      <div class="stat-label">views (90 days)</div>
+    </div>
+    <div class="stat" style="border-right: 2px solid rgba(255,255,255,0.2);">
+      <div class="stat-platform">Instagram</div>
+      <div class="stat-num">91K</div>
+      <div class="stat-label">interactions</div>
+    </div>
+    <div class="stat" style="border-right: 1px solid rgba(255,255,255,0.1);">
+      <div class="stat-platform">&nbsp;</div>
       <div class="stat-num">$40M</div>
       <div class="stat-label">in software sold</div>
     </div>
     <div class="stat">
+      <div class="stat-platform">&nbsp;</div>
       <div class="stat-num">523</div>
       <div class="stat-label">posts published</div>
     </div>
