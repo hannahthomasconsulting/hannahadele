@@ -69,6 +69,15 @@ a.logo {
 .nav-links a:hover { color: var(--black); }
 .nav-links a.active { color: var(--black); font-weight: 900; }
 .nav-links a.external { color: var(--blue); font-weight: 800; }
+.nav-links a.nav-btn {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 5px 11px;
+  border-radius: 4px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+.nav-links a.nav-btn:hover { background: #e0ba00; color: var(--black); }
 
 /* ── STATS BAR ── */
 .stats-bar {
